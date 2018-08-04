@@ -4,6 +4,6 @@ const fs = require('fs')
 const os = require('os')
 const notes = require('./notes')
 
-let user = os.userInfo()
+let res = notes.addNote()
 
-fs.appendFileSync('greetings.txt', `Hello ${user.username}! You are ${notes.age}\n`)
+console.log(res)
