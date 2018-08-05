@@ -14,7 +14,15 @@ console.log('Yargs', argv)
 
 if(_.isEqual('add', command)){
   //node app.js add --title=secret --body="This is my secret"
-  notes.addNote(argv.title, argv.body)
+  let note = notes.addNote(argv.title, argv.body)
+  if(note){
+    console.log('Note created')
+    console.log('...')
+    console.log(`Title : ${note.title}`)
+    console.log(`Body  : ${note.body}`)
+  }else{
+    console.log('Note title taken')
+  }
 }else if(_.isEqual('list', command)){
   //node app.js list
   notes.getAll()
