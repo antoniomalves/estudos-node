@@ -22,6 +22,7 @@ if(_.isEqual('add', command)){
   //node app.js read --title "secret"
   notes.getNote(argv.title)
 }else if(_.isEqual('remove', command)){
+  //node app.js remove --title "secret"
   notes.removeNote(argv.title)
 }else{
   console.log('Command not found')
