@@ -31,7 +31,9 @@ if(_.isEqual('add', command)){
   notes.getNote(argv.title)
 }else if(_.isEqual('remove', command)){
   //node app.js remove --title "secret"
-  notes.removeNote(argv.title)
+  var noteRemoved = notes.removeNote(argv.title);
+  var message = noteRemoved ? 'Note was removed' : 'Note not found';
+  console.log(message);
 }else{
   console.log('Command not found')
 }
