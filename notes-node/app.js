@@ -28,7 +28,15 @@ if(_.isEqual('add', command)){
   notes.getAll()
 }else if(_.isEqual('read', command)){
   //node app.js read --title "secret"
-  notes.getNote(argv.title)
+  let note = notes.getNote(argv.title)
+  if(note){
+    console.log('Note found')
+    console.log('...')
+    console.log(`Title : ${note.title}`)
+    console.log(`Body  : ${note.body}`)
+  }else{
+    console.log('Note not found')
+  }
 }else if(_.isEqual('remove', command)){
   //node app.js remove --title "secret"
   var noteRemoved = notes.removeNote(argv.title);
